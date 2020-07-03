@@ -42,7 +42,7 @@ body {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   font-family: 'Nunito Sans', sans-serif;
 
   color: var(--text);
@@ -50,10 +50,15 @@ body {
 
   min-height: 100vh;
 }
+
 .transition {
   transition: 0.25s ease-out;
 }
-
+.shadow {
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
+}
 :root {
   --dark-mode-elements: hsl(209, 23%, 22%);
   --dark-mode-background: hsl(207, 26%, 17%);
@@ -97,6 +102,7 @@ body {
 
 .style-chooser {
   width: 200px;
+  border-radius: 5px;
 }
 .style-chooser .vs__selected,
 .style-chooser .vs__searching .vs__selected,

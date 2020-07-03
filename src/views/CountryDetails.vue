@@ -1,6 +1,6 @@
 <template>
   <div style="margin-left: 40px;">
-    <button class="back-btn" v-on:click="goBack()">
+    <button class="back-btn shadow" v-on:click="goBack()">
       <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-left.png"/>
       <div>Back</div>
     </button>
@@ -40,7 +40,7 @@
         </div>
         <div class="country-borders">
           <span style="font-weight: 600;">Border Countries: </span>
-          <div v-for="borderCountry in country.borders" :key="borderCountry" v-on:click="goToDetails(borderCountry)">
+          <div class="shadow" v-for="borderCountry in country.borders" :key="borderCountry" v-on:click="goToDetails(borderCountry)">
             {{ borderCountry }}
           </div>
         </div>
@@ -144,10 +144,6 @@ export default {
   background-color: var(--elements);
   color: var(--text);
 
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
-
   cursor: pointer;
   img {
     height: 20px;
@@ -229,10 +225,6 @@ export default {
 
         background-color: var(--elements);
         color: var(--text);
-
-        -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
-        -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
-        box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.25);
 
         cursor: pointer;
       }

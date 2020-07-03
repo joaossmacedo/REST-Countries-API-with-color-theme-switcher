@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="filters">
-      <div class="input-container">
+      <div class="input-container shadow">
         <div>Q</div>
         <input
           type="text"
@@ -9,7 +9,7 @@
       </div>
       <v-select 
         name="style-chooser" 
-        class="style-chooser" 
+        class="style-chooser shadow" 
         placeholder="Filter by Region"
         @input="filterCountriesByRegion"
         :options="['Africa', 'Asia', 'Americas', 'Europe', 'Oceania']">
@@ -17,7 +17,7 @@
     </div>
 
     <div v-if="filteredData && filteredData.length" id="countries-container">
-      <div v-for="country in filteredData" :key="country.name" class="country transition" v-on:click="goToDetails(country.alpha3Code)">
+      <div v-for="country in filteredData" :key="country.name" class="country transition shadow" v-on:click="goToDetails(country.alpha3Code)">
         <img v-bind:src="country.flag" alt="Flag">
         <div>
           <div class="header">{{ country.name }}</div>
@@ -182,10 +182,6 @@ export default {
     cursor: pointer;
 
     background-color: var(--elements);
-
-    -webkit-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.25);
-    box-shadow: 0px 4px 5px 1px rgba(0,0,0,0.25);
     > img {
       flex: 0 1 auto;
 
