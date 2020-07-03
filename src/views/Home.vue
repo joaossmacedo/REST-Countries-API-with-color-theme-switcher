@@ -1,18 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Countries v-bind:data="countries"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Countries from '@/components/Countries.vue'
+import axios from 'axios';
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    Countries
+  },
+  data() {
+    return {
+      countries: [],
+      errors: []
+    }
+  },
+  mounted() {
+    axios.get(`https://restcountries.eu/rest/v2/all`).then(response => {
+      this.countries = response.data
+    }).catch(e => {
+      this.errors.push(e);
+    })
   }
 }
 </script>
