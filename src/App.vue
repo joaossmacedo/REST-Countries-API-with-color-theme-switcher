@@ -1,11 +1,15 @@
 <template>
   <div id="app" class="transition" v-bind:class="{ 'dark-mode': darkModeOn, 'light-mode': !darkModeOn }">
-    <div id="navbar">
+    <div id="navbar" class="non-selectable">
       <div class="title">
         Where in the world?
       </div>
       <div class="mode" v-on:click="switchMode()">
-        {{ darkModeOn ? 'Dark' : 'Light' }} Mode
+        <font-awesome-icon icon="moon"/>
+        <div>
+          {{ darkModeOn ? 'Dark' : 'Light' }} Mode
+        </div>
+        
       </div>
     </div>
     <router-view/>
@@ -51,6 +55,16 @@ body {
   min-height: 100vh;
 }
 
+.non-selectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome, Edge, Opera and Firefox */
+
+}
 .transition {
   transition: 0.25s ease-out;
 }
@@ -96,7 +110,11 @@ body {
     font-size: 20px;
   }
   .mode {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
+    width: 105px;
   }
 }
 

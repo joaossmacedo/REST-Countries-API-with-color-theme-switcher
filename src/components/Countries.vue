@@ -1,15 +1,18 @@
 <template>
   <div>
     <div class="filters">
-      <div class="input-container shadow">
-        <div>Q</div>
+      <div class="input-container non-selectable transition shadow">
+        <div>
+          <font-awesome-icon icon="search"/>
+        </div>
         <input
           type="text"
+          class="transition"
           @change="filterCountriesByName">
       </div>
       <v-select 
         name="style-chooser" 
-        class="style-chooser shadow" 
+        class="style-chooser non-selectable transition shadow" 
         placeholder="Filter by Region"
         @input="filterCountriesByRegion"
         :options="['Africa', 'Asia', 'Americas', 'Europe', 'Oceania']">
@@ -70,6 +73,14 @@ export default {
   mounted() {
     this.filteredData = this.data;
     console.log(this.data);
+    // const a = document.getElementById('a');
+    // a.setAttribute
+    const selectorInputs = document.querySelectorAll('.style-chooser input');
+    for (const selectorInput of selectorInputs) {
+      console.log(selectorInput);
+      selectorInput.setAttribute("readonly", true);
+    }
+    
   },
   methods: {
     formatNumber: function (number) {
@@ -145,6 +156,7 @@ export default {
 
       height: 100%;
       width: 30px;
+      padding: 0 5px;
 
       display: flex;
       justify-content: center;

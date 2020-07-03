@@ -1,7 +1,7 @@
 <template>
   <div style="margin-left: 40px;">
-    <button class="back-btn shadow" v-on:click="goBack()">
-      <img src="https://img.icons8.com/ios-filled/50/000000/long-arrow-left.png"/>
+    <button class="back-btn non-selectable shadow" v-on:click="goBack()">
+      <font-awesome-icon icon="arrow-left"/>
       <div>Back</div>
     </button>
     <div class="country" v-if="country">
@@ -132,14 +132,16 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 .back-btn {
-  margin-top: 40px;
-
   display: flex;
+  justify-content: space-evenly;
   align-items: center;  
 
-  padding: 8px 32px;
+  width: 100px;
+  padding: 8px 0;
+  margin-top: 40px;
   border: 0;
   border-radius: 5px;
+  font-size: 16px;
 
   background-color: var(--elements);
   color: var(--text);
@@ -176,7 +178,7 @@ export default {
     flex-direction: column;
     align-items: flex-start;
 
-    margin: 25px 0px 25px 100px;
+    margin: 25px 50px 25px 100px;
 
     .name {
       flex: 0 1 auto;
