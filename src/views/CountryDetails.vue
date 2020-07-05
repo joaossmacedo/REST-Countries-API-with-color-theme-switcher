@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-left: 40px;">
+  <div class="details-container">
     <button class="back-btn non-selectable shadow" v-on:click="goBack()">
       <font-awesome-icon icon="arrow-left"/>
       <div>Back</div>
@@ -159,6 +159,9 @@ export default {
   }
 }
 
+.details-container {
+  margin-left: 40px;
+}
 .country {
   display: flex;
 
@@ -231,6 +234,48 @@ export default {
         cursor: pointer;
       }
     }
+  }
+}
+
+@media only screen
+       and (max-width: 667px){
+  .country {
+    flex-wrap: wrap;
+
+    > div {
+      margin-right: 0;
+      margin-left: 0;
+      .data-container {
+        margin-right: 0;
+        margin-left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        > :first-child {
+          margin-bottom: 15px;
+        }
+        .half {
+          width: 100%;
+        }
+      }
+
+      .country-borders {
+        span {
+          width: 100%;
+        }
+      }
+    }
+
+    img {
+      width: calc(100vw - 40px);
+    }
+  }
+  .details-container {
+    margin-right: 20px;
+    margin-left: 20px;
+    width: calc(100vw - 40px);
   }
 }
 </style>

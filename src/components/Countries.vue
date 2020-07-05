@@ -223,4 +223,21 @@ export default {
     }
   }
 }
+
+@media only screen
+       and (max-width: 667px){
+  .filters {
+    height: auto !important;
+    padding: 30px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+
+    > div:first {
+      margin-bottom: 12px;
+      width: -webkit-fill-available;
+    }
+  }
+}
 </style>

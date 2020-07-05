@@ -146,4 +146,12 @@ body {
 .style-chooser .vs__open-indicator {
   fill: var(--text);
 }
+
+@media only screen
+       and (max-width: 667px){
+  #navbar {
+    padding: 0 10px;
+    height: 60px;
+  }
+}
 </style>
