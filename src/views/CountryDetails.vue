@@ -5,7 +5,7 @@
       <div>Back</div>
     </button>
     <div class="country" v-if="country">
-      <img v-bind:src="country.flag" alt="Flag">
+      <img v-bind:src="country.flag" alt="Flag" class="shadow">
       <div>
         <div class="name">{{ country.name }}</div>
         <div class='data-container'>
